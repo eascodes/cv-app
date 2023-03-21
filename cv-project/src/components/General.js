@@ -36,54 +36,60 @@ class General extends Component {
     render() {
         const { firstName, lastName, email, phone, editMode } = this.state;
         
-        if (editMode) {
-            return(
-                <div>
-                    <form className="general-form" onSubmit={this.handleSubmit}>
-                        <h4>Contact Info <button type="submit">Submit</button></h4>
-                        <div className="name-field">
-                            <input
-                                type="text"
-                                placeholder="First Name"
-                                name="firstName"
-                                value={firstName}
-                                onChange={this.handleChange}
-                            ></input>
-                            <input
-                                type="text"
-                                placeholder="Last Name"
-                                name="lastName"
-                                value={lastName}
-                                onChange={this.handleChange}
-                            ></input>
-                        </div>
+        // Form to be shown in edit mode
+        const editContent = (
+            <div>
+                <form className="general-form" onSubmit={this.handleSubmit}>
+                    <h4>Contact Info <button type="submit">Submit</button></h4>
+                    <div className="name-field">
                         <input
-                            type="email"
-                            placeholder="Email"
-                            name="email"
-                            value={email}
+                            type="text"
+                            placeholder="First Name"
+                            name="firstName"
+                            value={firstName}
                             onChange={this.handleChange}
                         ></input>
                         <input
-                            type="tel"
-                            placeholder="Phone Number"
-                            name="phone"
-                            value={phone}
+                            type="text"
+                            placeholder="Last Name"
+                            name="lastName"
+                            value={lastName}
                             onChange={this.handleChange}
                         ></input>
-                    </form>
-                </div>
-            )
-        } else {
-            return(
-                <div>
-                    <h4>Contact Info <button onClick={this.handleEdit}>Edit</button></h4>
-                    <h5>{firstName} {lastName}</h5>
-                    <p>{email}</p>
-                    <p>{phone}</p>
-                </div>
-            )
-        }
+                    </div>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        value={email}
+                        onChange={this.handleChange}
+                    ></input>
+                    <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        name="phone"
+                        value={phone}
+                        onChange={this.handleChange}
+                    ></input>
+                </form>
+            </div>
+        )
+
+        // Text to be shown after submission
+        const submittedContent = (
+            <div>
+                <h4>Contact Info <button onClick={this.handleEdit}>Edit</button></h4>
+                <h5>{firstName} {lastName}</h5>
+                <p>{email}</p>
+                <p>{phone}</p>
+            </div>
+        )
+
+        return(
+            <div>
+                {editMode ? editContent : submittedContent}
+            </div>
+        )
     }
 }
 
