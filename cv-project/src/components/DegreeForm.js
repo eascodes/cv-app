@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 
 class DegreeForm extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         const { handleChange, handleDelete, id, school, title, date } = this.props;
