@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "../styles/style.css"
-import Degree from './Degree'
+import DegreeForm from './DegreeForm'
 import uniqid from "uniqid";
 
 class Education extends Component {
@@ -8,13 +8,13 @@ class Education extends Component {
         super()
         
         this.state = {
+            editMode: true,
             degreeArr: [{
                 school: "",
                 title: "",
                 date: "",
                 id: uniqid(),
             }],
-            editMode: true,
         }
     }
 
@@ -47,6 +47,7 @@ class Education extends Component {
 
     handleAddNew = () => {
         this.setState({
+            editMode: true,
             degreeArr: this.state.degreeArr.concat({
                 school: "",
                 title: "",
@@ -66,7 +67,6 @@ class Education extends Component {
     }
 
     render() {
-        console.log(this.state)
         const { degreeArr, editMode } = this.state;
         const editButton = <button onClick={this.handleEdit}>Edit</button>;
         const submitButton = <button onClick={this.handleSubmit}>Submit</button>;
@@ -75,7 +75,7 @@ class Education extends Component {
         const editContent = (
             <div>
                 {degreeArr.map(item => {
-                    return <Degree 
+                    return <DegreeForm 
                                 handleChange={this.handleChange}
                                 handleDelete={this.handleDelete}
                                 key={item.id} 
