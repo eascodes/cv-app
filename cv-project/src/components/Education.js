@@ -56,7 +56,17 @@ class Education extends Component {
         })
     }
 
+    handleDelete = (e) => {
+        this.setState({
+            editMode: true,
+            degreeArr: this.state.degreeArr.filter(degree => {
+                return degree.id !== e.target.className ; 
+            })
+        })
+    }
+
     render() {
+        console.log(this.state)
         const { degreeArr, editMode } = this.state;
         const editButton = <button onClick={this.handleEdit}>Edit</button>;
         const submitButton = <button onClick={this.handleSubmit}>Submit</button>;
@@ -67,6 +77,7 @@ class Education extends Component {
                 {degreeArr.map(item => {
                     return <Degree 
                                 handleChange={this.handleChange}
+                                handleDelete={this.handleDelete}
                                 key={item.id} 
                                 id={item.id}
                                 school={item.school}

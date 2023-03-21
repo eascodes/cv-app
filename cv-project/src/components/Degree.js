@@ -6,7 +6,7 @@ class Degree extends Component {
     }
 
     render() {
-        const { handleChange, id, school, title, date } = this.props;
+        const { handleChange, handleDelete, id, school, title, date } = this.props;
 
         return(
             <div>
@@ -35,8 +35,8 @@ class Degree extends Component {
                         className={id}
                         value={date}
                     ></input>
-                    <button>Delete</button>
                 </form>
+                <button className={id} onClick={handleDelete}>Delete</button>
             </div>
         )
     }
