@@ -76,6 +76,7 @@ class Experience extends Component {
         const submitButton = <button onClick={this.handleSubmit}>Submit</button>;
         const addNewButton = <button onClick={this.handleAddNew}>Add New</button>;
 
+        // Form to be shown in edit mode
         const editContent = (
             <div>
                 {jobArr.map(item => {
@@ -94,6 +95,7 @@ class Experience extends Component {
             </div>
         )
 
+        // Text to be shown upon submission
         const submittedContent = (
             <div>
                 {jobArr.map(item=> {
