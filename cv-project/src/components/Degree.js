@@ -1,0 +1,45 @@
+import React, { Component } from 'react'
+
+class Degree extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        const { handleChange, id, school, title, date } = this.props;
+
+        return(
+            <div>
+                <form>
+                    <input
+                        type="text"
+                        placeholder="Name of School"
+                        onChange={handleChange}
+                        name="school"
+                        className={id}
+                        value={school}
+                    ></input>
+                    <input
+                        type="text"
+                        placeholder="Title of Degree"
+                        onChange={handleChange}
+                        name="title"
+                        className={id}
+                        value={title}
+                    ></input>
+                    <input
+                        type="text"
+                        placeholder="Graduate Date MM/YY"
+                        onChange={handleChange}
+                        name="date"
+                        className={id}
+                        value={date}
+                    ></input>
+                    <button>Delete</button>
+                </form>
+            </div>
+        )
+    }
+}
+
+export default Degree;

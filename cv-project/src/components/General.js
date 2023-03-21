@@ -78,9 +78,9 @@ class General extends Component {
             return(
                 <div>
                     <h4>Contact Info <button onClick={this.handleEdit}>Edit</button></h4>
-                    <h3>{firstName} {lastName}</h3>
-                    <h4>{email}</h4>
-                    <h4>{phone}</h4>
+                    <h5>{firstName} {lastName}</h5>
+                    <p>{email}</p>
+                    <p>{phone}</p>
                 </div>
             )
         }
