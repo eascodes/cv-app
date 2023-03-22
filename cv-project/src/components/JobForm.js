@@ -46,18 +46,18 @@ class JobForm extends Component {
                         cols={42}
                         required
                     />
+                    <p className="form-labels">Start Date</p>
                     <input
-                        type="text"
-                        placeholder="Start Date"
+                        type="date"
                         onChange={handleChange}
                         name="start"
                         className={id}
                         value={start}
                         required
                     ></input>
+                    <p className="form-labels">End Date</p>
                     <input
-                        type="text"
-                        placeholder="End Date"
+                        type="date"
                         onChange={handleChange}
                         name="end"
                         className={id}

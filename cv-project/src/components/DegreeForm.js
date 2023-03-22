@@ -27,9 +27,9 @@ class DegreeForm extends Component {
                         value={title}
                         required
                     ></input>
+                    <p className="form-labels">Graduation Date</p>
                     <input
-                        type="text"
-                        placeholder="Graduate Date MM/YY"
+                        type="date"
                         onChange={handleChange}
                         name="date"
                         className={id}

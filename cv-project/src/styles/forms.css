@@ -19,6 +19,16 @@ textarea {
     font-family: inherit;
 }
 
+input[type=date] {
+    font-family: inherit;
+    color: gray;
+}
+
+.form-labels {
+    font-size: 0.9rem;
+    margin-bottom: -5px;
+}
+
 .name-field>input {
     width: 145px;
 }
