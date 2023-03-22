@@ -25,6 +25,7 @@ class JobForm extends Component {
                         name="company"
                         className={id}
                         value={company}
+                        required
                     ></input>
                     <input
                         type="text"
@@ -33,15 +34,18 @@ class JobForm extends Component {
                         name="title"
                         className={id}
                         value={title}
+                        required
                     ></input>
-                    <input
-                        type="text"
+                    <textarea
                         placeholder="Main Job Tasks"
                         onChange={handleChange}
                         name="tasks"
                         className={id}
                         value={tasks}
-                    ></input>
+                        rows={4}
+                        cols={42}
+                        required
+                    />
                     <input
                         type="text"
                         placeholder="Start Date"
@@ -49,6 +53,7 @@ class JobForm extends Component {
                         name="start"
                         className={id}
                         value={start}
+                        required
                     ></input>
                     <input
                         type="text"
@@ -57,6 +62,7 @@ class JobForm extends Component {
                         name="end"
                         className={id}
                         value={end}
+                        required
                     ></input>
                 </form>
                 <button className={id} onClick={handleDelete}>− DELETE</button>

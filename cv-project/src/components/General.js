@@ -53,6 +53,7 @@ class General extends Component {
                             name="firstName"
                             value={firstName}
                             onChange={this.handleChange}
+                            required
                         ></input>
                         <input
                             type="text"
@@ -60,6 +61,7 @@ class General extends Component {
                             name="lastName"
                             value={lastName}
                             onChange={this.handleChange}
+                            required
                         ></input>
                     </div>
                     <input
@@ -68,6 +70,7 @@ class General extends Component {
                         name="email"
                         value={email}
                         onChange={this.handleChange}
+                        required
                     ></input>
                     <input
                         type="tel"
@@ -75,6 +78,7 @@ class General extends Component {
                         name="phone"
                         value={phone}
                         onChange={this.handleChange}
+                        required
                     ></input>
                     <input
                         type="text"
@@ -82,14 +86,17 @@ class General extends Component {
                         name="location"
                         value={location}
                         onChange={this.handleChange}
+                        required
                     ></input>
-                    <input
-                        type="textarea"
+                    <textarea
                         placeholder="Personal Summary"
                         name="about"
                         value={about}
                         onChange={this.handleChange}
-                    ></input>
+                        rows={4}
+                        cols={42}
+                        required
+                    />
                 </form>
             </div>
         )

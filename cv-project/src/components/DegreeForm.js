@@ -16,6 +16,7 @@ class DegreeForm extends Component {
                         name="school"
                         className={id}
                         value={school}
+                        required
                     ></input>
                     <input
                         type="text"
@@ -24,6 +25,7 @@ class DegreeForm extends Component {
                         name="title"
                         className={id}
                         value={title}
+                        required
                     ></input>
                     <input
                         type="text"
@@ -32,6 +34,7 @@ class DegreeForm extends Component {
                         name="date"
                         className={id}
                         value={date}
+                        required
                     ></input>
                 </form>
                 <button className={id} onClick={handleDelete}>− DELETE</button>
