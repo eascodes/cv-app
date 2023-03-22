@@ -55,8 +55,7 @@ input {
 
 .degree-div>button:hover,
 .job-div>button:hover {
-    background-color: white;
-    color: #9d0208;
+    background-color: #da0108;
 }
 
 .form-header {
@@ -80,10 +79,8 @@ input {
     margin-bottom: 20px;
 }
 
-.add-new-button:hover,
-.submit-button:hover {
-    background-color: #ffba08;
-    color: black;
+.add-new-button:hover {
+    background-color: #1556b1;
 }
 
 .submit-button {
