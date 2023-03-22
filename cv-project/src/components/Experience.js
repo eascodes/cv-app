@@ -72,13 +72,14 @@ class Experience extends Component {
 
     render() {
         const { jobArr, editMode } = this.state;
-        const editButton = <button onClick={this.handleEdit}>Edit</button>;
-        const submitButton = <button onClick={this.handleSubmit}>Submit</button>;
-        const addNewButton = <button onClick={this.handleAddNew}>Add New</button>;
+        const editButton = <button onClick={this.handleEdit} className="edit-button">EDIT</button>;
+        const submitButton = <button onClick={this.handleSubmit} className="submit-button">SUBMIT</button>;
+        const addNewButton = <button onClick={this.handleAddNew} className="add-new-button">+ ADD NEW</button>;
 
         // Form to be shown in edit mode
         const editContent = (
-            <div>
+            <div className="edit-experience-div">
+                <h4 className="form-header">EXPERIENCE {submitButton}</h4>
                 {jobArr.map(item => {
                     return <JobForm 
                                 handleChange={this.handleChange}
@@ -98,14 +99,15 @@ class Experience extends Component {
         // Text to be shown upon submission
         const submittedContent = (
             <div>
+                <h4 className="submitted-header">EXPERIENCE</h4>
+                <hr></hr>
                 {jobArr.map(item=> {
                     return (
                         <div key={item.id}>
-                            <h5>{item.company}</h5>
-                            <p>{item.title}</p>
+                            <h5>{item.title}</h5>
+                            <p>{item.company}</p>
+                            <p>{item.start}-{item.end}</p>
                             <p>{item.tasks}</p>
-                            <p>{item.start}</p>
-                            <p>{item.end}</p>
                         </div>
                     )
                 })}
@@ -113,10 +115,8 @@ class Experience extends Component {
         )
 
         return(
-            <div>
-                <h4>Experience 
-                    {editMode ? submitButton : editButton}
-                </h4>
+            <div className="experience-div content">
+                {!editMode && editButton}
                 {editMode ? editContent : submittedContent}
                 {editMode && addNewButton}
             </div>

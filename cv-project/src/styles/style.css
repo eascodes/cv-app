@@ -1,16 +1,50 @@
 * {
     box-sizing: border-box;
-}
-
-body {
     margin: 0;
 }
 
-.general-form {
-    display: flex;
-    flex-direction: column;
+body {
+    font-family: "Montserrat", sans-serif;
 }
 
-.general-form>input {
-    width: 20%;
+.general-div>.edit-button {
+    top: 25px;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.edit-button {
+    background-color: #f77f00;
+    position: absolute;
+    right: 25px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    color: white;
+    background-color: #1d3557
+}
+
+.general-div>.edit-button:hover {
+    background-color: white;
+    color: #f77f00;
+}
+
+hr {
+    height: 1px;
+    background-color: #1d3557;
+    border: none;
 }

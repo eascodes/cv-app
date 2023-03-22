@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "../styles/forms.css"
 
 class DegreeForm extends Component {
 
@@ -6,7 +7,7 @@ class DegreeForm extends Component {
         const { handleChange, handleDelete, id, school, title, date } = this.props;
 
         return(
-            <div>
+            <div className="degree-div">
                 <form>
                     <input
                         type="text"
@@ -33,7 +34,7 @@ class DegreeForm extends Component {
                         value={date}
                     ></input>
                 </form>
-                <button className={id} onClick={handleDelete}>Delete</button>
+                <button className={id} onClick={handleDelete}>− DELETE</button>
             </div>
         )
     }

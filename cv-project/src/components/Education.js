@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "../styles/style.css"
+import "../styles/components.css"
 import DegreeForm from './DegreeForm'
 import uniqid from "uniqid";
 
@@ -68,13 +69,14 @@ class Education extends Component {
 
     render() {
         const { degreeArr, editMode } = this.state;
-        const editButton = <button onClick={this.handleEdit}>Edit</button>;
-        const submitButton = <button onClick={this.handleSubmit}>Submit</button>;
-        const addNewButton = <button onClick={this.handleAddNew}>Add New</button>;
+        const editButton = <button onClick={this.handleEdit} className="edit-button">EDIT</button>;
+        const submitButton = <button onClick={this.handleSubmit} className="submit-button">SUBMIT</button>;
+        const addNewButton = <button onClick={this.handleAddNew} className="add-new-button">+ ADD NEW</button>;
 
         // Form to be shown in edit mode
         const editContent = (
-            <div>
+            <div className="edit-education-div">
+                <h4 className="form-header">EDUCATION {submitButton}</h4>
                 {degreeArr.map(item => {
                     return <DegreeForm 
                                 handleChange={this.handleChange}
@@ -92,12 +94,14 @@ class Education extends Component {
         // Text to be shown upon submission
         const submittedContent = (
             <div>
+                <h4 className="submitted-header">EDUCATION</h4>
+                <hr></hr>
                 {degreeArr.map(item=> {
                     return (
                         <div key={item.id}>
                             <h5>{item.school}</h5>
                             <p>{item.title}</p>
-                            <p>{item.date}</p>
+                            <p>Graduation Date: {item.date}</p>
                         </div>
                     )
                 })}
@@ -105,10 +109,8 @@ class Education extends Component {
         )
 
         return(
-            <div>
-                <h4>Education 
-                    {editMode ? submitButton : editButton}
-                </h4>
+            <div className="education-div content">
+                {!editMode && editButton}
                 {editMode ? editContent : submittedContent}
                 {editMode && addNewButton}
             </div>

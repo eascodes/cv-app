@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "../styles/style.css"
+import "../styles/components.css"
 
 class General extends Component {
     constructor() {
@@ -10,6 +11,8 @@ class General extends Component {
             lastName: "",
             email: "",
             phone: "",
+            location: "",
+            about: "",
             editMode: true,
         }
     }
@@ -34,13 +37,15 @@ class General extends Component {
     }
 
     render() {
-        const { firstName, lastName, email, phone, editMode } = this.state;
-        
+        const { firstName, lastName, email, phone, location, about, editMode } = this.state;
+        const editButton = <button onClick={this.handleEdit} className="edit-button">EDIT</button>;
+        const submitButton = <button type="submit" className="submit-button">SUBMIT</button>;
+
         // Form to be shown in edit mode
         const editContent = (
             <div>
                 <form className="general-form" onSubmit={this.handleSubmit}>
-                    <h4>Contact Info <button type="submit">Submit</button></h4>
+                    <h4 className="form-header">CONTACT INFO {submitButton}</h4>
                     <div className="name-field">
                         <input
                             type="text"
@@ -71,17 +76,43 @@ class General extends Component {
                         value={phone}
                         onChange={this.handleChange}
                     ></input>
+                    <input
+                        type="text"
+                        placeholder="City, State"
+                        name="location"
+                        value={location}
+                        onChange={this.handleChange}
+                    ></input>
+                    <input
+                        type="textarea"
+                        placeholder="Personal Summary"
+                        name="about"
+                        value={about}
+                        onChange={this.handleChange}
+                    ></input>
                 </form>
             </div>
         )
 
         // Text to be shown after submission
         const submittedContent = (
-            <div>
-                <h4>Contact Info <button onClick={this.handleEdit}>Edit</button></h4>
-                <h5>{firstName} {lastName}</h5>
-                <p>{email}</p>
-                <p>{phone}</p>
+            <div className="general-div">
+                {editButton}
+                <div className="name-div">
+                    <h1>{firstName.toUpperCase()}</h1><h1>{lastName.toUpperCase()}</h1>
+                </div>
+                <hr></hr>
+                <div className="contact-div">
+                    <p>{email}</p>
+                    <p>|</p>
+                    <p>{phone}</p>
+                    <p>|</p>
+                    <p>{location}</p>
+                </div>
+                <div className="about">
+                    <h4>ABOUT ME</h4>
+                    <p>{about}</p>
+                </div>
             </div>
         )
 

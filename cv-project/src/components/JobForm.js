@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "../styles/forms.css"
 
 class JobForm extends Component {
 
@@ -15,7 +16,7 @@ class JobForm extends Component {
         } = this.props;
 
         return(
-            <div>
+            <div className="job-div">
                 <form>
                     <input
                         type="text"
@@ -58,7 +59,7 @@ class JobForm extends Component {
                         value={end}
                     ></input>
                 </form>
-                <button className={id} onClick={handleDelete}>Delete</button>
+                <button className={id} onClick={handleDelete}>− DELETE</button>
             </div>
         )
     }

@@ -1,0 +1,91 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+form>h4 {
+    margin-top: 25px;
+    text-align: center;
+}
+
+input {
+    width: 300px;
+}
+
+.name-field>input {
+    width: 145px;
+}
+
+.name-field>input:first-child {
+    margin-right: 10px;
+}
+
+.content form {
+    margin-top: 10px;
+}
+
+.edit-education-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.degree-div,
+.job-div {
+    width: 350px;
+    background-color: rgb(228, 228, 228);
+    padding: 5px;
+    margin: 5px 5px 10px 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.degree-div>button,
+.job-div>button {
+    width: 300px;
+    margin: 10px 0 10px 0px;
+    background-color: #9d0208;
+}
+
+.degree-div>button:hover,
+.job-div>button:hover {
+    background-color: white;
+    color: #9d0208;
+}
+
+.form-header {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.edit-experience-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-new-button {
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+    background-color: #1d3557;
+    margin-bottom: 20px;
+}
+
+.add-new-button:hover,
+.submit-button:hover {
+    background-color: #ffba08;
+    color: black;
+}
+
+.submit-button {
+    background-color: #f77f00;
+}
