@@ -11,6 +11,12 @@ body {
     top: 25px;
 }
 
+@media only screen and (max-width: 768px) {
+    .general-div>.edit-button {
+        top: 85px;
+    }
+}
+
 button {
     border: none;
     color: white;
@@ -33,14 +39,9 @@ button:hover {
     cursor: pointer;
 }
 
-.edit-button:hover {
-    color: white;
-    background-color: #1d3557
-}
-
-.general-div>.edit-button:hover {
-    background-color: white;
-    color: #f77f00;
+.edit-button:hover,
+.submit-button:hover {
+    background-color: #ffba08;
 }
 
 hr {
