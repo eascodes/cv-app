@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "../styles/style.css"
 import JobForm from './JobForm'
 import uniqid from "uniqid";
+import { format, parseISO } from 'date-fns';
 
 class Experience extends Component {
     constructor() {
@@ -106,7 +107,7 @@ class Experience extends Component {
                         <div key={item.id}>
                             <h5>{item.title}</h5>
                             <p>{item.company}</p>
-                            <p>{item.start}-{item.end}</p>
+                            {(item.start !== "" && item.end !== "") && <p>{format(parseISO(item.start), "MM/yy")}-{format(parseISO(item.end), "MM/yy")}</p>}
                             <p>{item.tasks}</p>
                         </div>
                     )

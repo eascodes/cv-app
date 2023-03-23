@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import "../styles/style.css"
 import "../styles/components.css"
 import DegreeForm from './DegreeForm'
-import uniqid from "uniqid";
+import uniqid from "uniqid"
+import { format, parseISO } from 'date-fns'
 
 class Education extends Component {
     constructor() {
@@ -90,7 +91,7 @@ class Education extends Component {
                 })}
             </div>
         )
-
+        
         // Text to be shown upon submission
         const submittedContent = (
             <div>
@@ -101,7 +102,7 @@ class Education extends Component {
                         <div key={item.id}>
                             <h5>{item.school}</h5>
                             <p>{item.title}</p>
-                            <p>Graduation Date: {item.date}</p>
+                            {item.date !== "" && <p>Graduated {format(parseISO(item.date), "MM/yy")}</p>}
                         </div>
                     )
                 })}
