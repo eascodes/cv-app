@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "../styles/style.css"
 import JobForm from './JobForm'
-import uniqid from "uniqid";
-import { format, parseISO } from 'date-fns';
+import uniqid from 'uniqid'
+import { format, parseISO } from 'date-fns'
 
 class Experience extends Component {
     constructor() {

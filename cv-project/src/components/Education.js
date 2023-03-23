@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "../styles/style.css"
 import "../styles/components.css"
 import DegreeForm from './DegreeForm'
-import uniqid from "uniqid"
+import uniqid from 'uniqid'
 import { format, parseISO } from 'date-fns'
 
 class Education extends Component {
