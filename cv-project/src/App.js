@@ -1,19 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import General from './components/General';
 import Education from './components/Education'
 import Experience from './components/Experience';
 
-class App extends Component {
+const App = () => {
 
-    render() {
-        return (
-            <div>
-                <General />
-                <Education />
-                <Experience />
-            </div>
-        )
-    }
+    return (
+        <div>
+            <General />
+            <Education />
+            <Experience />
+        </div>
+    )
+    
 }
 
 export default App;
